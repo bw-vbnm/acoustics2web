@@ -1,6 +1,14 @@
 $area-shadow: 0 0 17px 3px black;
 $hover-blur: 0 0 4px #D0D9E5;
-$blue: #448AA6;
+//$lightblue: #448AA6;
+$lightblue: #619BAA;
+$blue: #0B5C6D;
+//$darkblue: #34495E;
+$darkblue: #383E4F;
+//$grey: #54575C;
+$grey: #667489;
+$darkgrey: #3C4252;
+$offwhite: #E3E4E5;
 
 @mixin ellipsis-overflow() {
     overflow-x: hidden;
@@ -39,17 +47,17 @@ html, body {
 }
 
 .dialog-area {
-    background-color: white;
+    background-color: $offwhite;
     box-shadow: $area-shadow;
     padding: 8px;
 
     &.top {
-        border-radius: 0 0 4px 4px;
+        //border-radius: 0 0 4px 4px;
     }
 
     &.center {
         align-self: center;
-        border-radius: 4px;
+        //border-radius: 4px;
     }
 
     input, button {
@@ -59,9 +67,9 @@ html, body {
     }
 
     button {
-        border-radius: 4px;
+        //border-radius: 4px;
         border: none;
-        color: white;
+        color: $offwhite;
         display: inline;
         float: right;
         padding: 8px;
@@ -69,7 +77,7 @@ html, body {
     }
 
     .confirm {
-        background-color: $blue;
+        background-color: $lightblue;
     }
 
     .cancel {
@@ -87,8 +95,9 @@ html, body {
 
 .top-area {
     align-items: center;
-    background: linear-gradient(to bottom, #383838 0%, #222 100%);
-    border-bottom: 1px solid #333;
+    //background: linear-gradient(to bottom, #383838 0%, #222 100%);
+    background-color: $darkblue;
+    //border-bottom: 1px solid #333;
     display: flex;
     flex: 1;
     max-height: 50px;
@@ -97,6 +106,11 @@ html, body {
     vertical-align: middle;
     width: 100%;
     z-index: 5;
+
+    .button-container{
+        margin-left: auto;
+        padding-right: 18px;
+    }
 }
 
 .middle-area {
@@ -107,7 +121,8 @@ html, body {
 }
 
 .side-area {
-    background: linear-gradient(to bottom, #444 0%,#333 100%);
+    //background: linear-gradient(to bottom, #444 0%,#333 100%);
+    background-color: $grey;
     display: flex;
     flex-direction: column;
     flex: 1;
@@ -121,15 +136,16 @@ html, body {
 .playlists {
     margin-top: 8px;
     overflow-y: auto;
-
     hr {
-        border-color: #888;
-        margin: 4px 0;
+        border-color: $offwhite;
+        width: 80%;
+        margin: auto;
+        margin-top: 4px;
     }
 
     li {
         @include ellipsis-overflow();
-        color: white;
+        color: $offwhite;
         cursor: default;
         font-family: 'Open Sans';
         font-size: 14px;
@@ -142,7 +158,7 @@ html, body {
         position: relative;
 
         &:hover {
-            background: $blue;
+            background: $lightblue;
         }
     }
 }
@@ -158,8 +174,8 @@ html, body {
 }
 
 .playlist-area {
-    background-color: #444;
-    box-shadow: $area-shadow;
+    background-color: $offwhite;
+    //box-shadow: $area-shadow;
     flex: 5;
     overflow-x: hidden;
     overflow-y: auto;
@@ -169,33 +185,36 @@ html, body {
 
 table.playlist {
     border-collapse: collapse;
-    color: white;
+    color: $blue;
     font-family: 'Arial';
     font-size: 14px;
     font-weight: 300;
     table-layout: fixed;
     width: 100%;
+    text-align: left;
 
     thead {
-        background:  linear-gradient(to bottom, #448AA6 0%, #356B8C 100%);
+        //background: linear-gradient(to bottom, #448AA6 0%, #356B8C 100%);
+        //background-color: $blue;
+        //color: $offwhite;
     }
 
     th {
         padding: 4px;
-        border-right: 1px solid black;
+        //border-right: 1px solid black;
     }
 
     th:last-child {
         border: none;
     }
 
-    tr:nth-child(even) {
-        background-color: #666;
-    }
+    //tr:nth-child(even) {
+    //  background-color: #666;
+    //  background-color: #ACB0BD;
+    //}
 
     td, th {
         @include ellipsis-overflow();
-
         padding: 4px;
     }
 
@@ -205,8 +224,8 @@ table.playlist {
 }
 
 .queue-area {
-    background-color: #222;
-    box-shadow: $area-shadow;
+    background-color: $grey;
+    //box-shadow: $area-shadow;
     flex: 1;
     min-width: 150px;
     overflow: auto;
@@ -217,7 +236,7 @@ table.playlist {
 .song-queue {
     li {
         border-bottom: 1px solid #333;
-        color: white;
+        color: $offwhite;
         font-family: 'Open Sans';
         font-size: 14px;
         font-weight: 700;
@@ -230,7 +249,6 @@ table.playlist {
             background: rgba(0, 0, 0, 0.5)
         }
     }
-
 
     .title, .album, .artist {
         @include ellipsis-overflow();
@@ -252,9 +270,10 @@ table.playlist {
 
 .bottom-area {
     align-items: center;
-    background: linear-gradient(to bottom, #444 0%, #333 100%);
+    //background: linear-gradient(to bottom, #444 0%, #333 100%);
+    background-color: $darkblue;
     border-top: 1px solid #333;
-    box-shadow: $area-shadow;
+    //box-shadow: $area-shadow;
     display: flex;
     flex: 1;
     justify-content: space-between;
@@ -271,17 +290,17 @@ table.playlist {
     cursor: default;
 
     &:first-child {
-        padding-left: 22px;
+        padding-left: 18px;
     }
 
     &:last-child {
-        padding-right: 22px;
+        padding-right: 18px;
     }
 
     &.button {
         font-size: 12px;
         margin: 0 10px;
-        text-shadow: 1px 1px 1px black;
+        //text-shadow: 1px 1px 1px black;
         transition: text-shadow 0.2s, box-shadow 0.2s;
 
         &:hover {
@@ -290,19 +309,18 @@ table.playlist {
     }
 
     &.rect-button {
-        background: #555;
-        border-radius: 4px;
-        border: 1px solid #222;
-        color: white;
+        background: $grey;
+        //border-radius: 4px;
+        border: 1px solid $grey;
+        color: $offwhite;
         padding: 6px;
-        margin-left: 8px;
+        margin-right: 8px;   
 
         &:focus {
             outline: none;
         }
 
         &:active {
-
             background: #448AA6;
         }
 
@@ -312,6 +330,7 @@ table.playlist {
         font-size: 12px;
         margin-left: 8px;
         margin-right: 8px;
+        float: left;
     }
 
     input {
@@ -344,23 +363,24 @@ table.playlist {
         }
 
         .cover {
-            background-color: $blue;
+            background-color: $lightblue;
             border-radius: 4px;
             height: 10px;
             position: absolute;
         }
 
         .handle {
-            background: linear-gradient(to bottom, #7e868c 0%, #374044 100%);
+            //background: linear-gradient(to bottom, #7e868c 0%, #374044 100%);
+            background-color: $lightblue;
             border-radius: 8px;
-            border: 1px solid #444;
-            box-shadow: 0 0 2px black;
-            height: 16px;
-            margin-left: -8px;
-            margin-top: -4px;
+            //border: 5px solid ;
+            //box-shadow: 0 0 2px black;
+            height: 10px;
+            margin-left: -5px;
+            //margin-top: px;
             position: relative;
-            transition:  box-shadow 0.1s;
-            width: 16px;
+            //transition:  box-shadow 0.1s;
+            width: 10px;
 
             &:hover {
                 box-shadow: $hover-blur;

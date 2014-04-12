@@ -25,28 +25,24 @@ html, body {
   z-index: 10; }
 
 .dialog-area {
-  background-color: white;
+  background-color: #e3e4e5;
   box-shadow: 0 0 17px 3px black;
   padding: 8px; }
-  .dialog-area.top {
-    border-radius: 0 0 4px 4px; }
   .dialog-area.center {
-    align-self: center;
-    border-radius: 4px; }
+    align-self: center; }
   .dialog-area input, .dialog-area button {
     display: block;
     margin: 4px;
     padding: 4px; }
   .dialog-area button {
-    border-radius: 4px;
     border: none;
-    color: white;
+    color: #e3e4e5;
     display: inline;
     float: right;
     padding: 8px;
     text-shadow: 0 0 1px black; }
   .dialog-area .confirm {
-    background-color: #448aa6; }
+    background-color: #619baa; }
   .dialog-area .cancel {
     background-color: #d44637; }
 
@@ -61,8 +57,7 @@ html, body {
 
 .top-area {
   align-items: center;
-  background: linear-gradient(to bottom, #383838 0%, #222222 100%);
-  border-bottom: 1px solid #333;
+  background-color: #383e4f;
   display: flex;
   flex: 1;
   max-height: 50px;
@@ -71,6 +66,9 @@ html, body {
   vertical-align: middle;
   width: 100%;
   z-index: 5; }
+  .top-area .button-container {
+    margin-left: auto;
+    padding-right: 18px; }
 
 .middle-area {
   background-color: red;
@@ -79,7 +77,7 @@ html, body {
   width: 100%; }
 
 .side-area {
-  background: linear-gradient(to bottom, #444444 0%, #333333 100%);
+  background-color: #667489;
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -93,13 +91,15 @@ html, body {
   margin-top: 8px;
   overflow-y: auto; }
   .playlists hr {
-    border-color: #888;
-    margin: 4px 0; }
+    border-color: #e3e4e5;
+    width: 80%;
+    margin: auto;
+    margin-top: 4px; }
   .playlists li {
     overflow-x: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    color: white;
+    color: #e3e4e5;
     cursor: default;
     font-family: 'Open Sans';
     font-size: 14px;
@@ -111,7 +111,7 @@ html, body {
     padding-top: 4px;
     position: relative; }
     .playlists li:hover {
-      background: #448aa6; }
+      background: #619baa; }
 
 .album-art {
   width: 100%;
@@ -121,8 +121,7 @@ html, body {
     width: 100%; }
 
 .playlist-area {
-  background-color: #444;
-  box-shadow: 0 0 17px 3px black;
+  background-color: #e3e4e5;
   flex: 5;
   overflow-x: hidden;
   overflow-y: auto;
@@ -131,21 +130,17 @@ html, body {
 
 table.playlist {
   border-collapse: collapse;
-  color: white;
+  color: #0b5c6d;
   font-family: 'Arial';
   font-size: 14px;
   font-weight: 300;
   table-layout: fixed;
-  width: 100%; }
-  table.playlist thead {
-    background: linear-gradient(to bottom, #448aa6 0%, #356b8c 100%); }
+  width: 100%;
+  text-align: left; }
   table.playlist th {
-    padding: 4px;
-    border-right: 1px solid black; }
+    padding: 4px; }
   table.playlist th:last-child {
     border: none; }
-  table.playlist tr:nth-child(even) {
-    background-color: #666; }
   table.playlist td, table.playlist th {
     overflow-x: hidden;
     text-overflow: ellipsis;
@@ -155,8 +150,7 @@ table.playlist {
     cursor: pointer; }
 
 .queue-area {
-  background-color: #222;
-  box-shadow: 0 0 17px 3px black;
+  background-color: #667489;
   flex: 1;
   min-width: 150px;
   overflow: auto;
@@ -165,7 +159,7 @@ table.playlist {
 
 .song-queue li {
   border-bottom: 1px solid #333;
-  color: white;
+  color: #e3e4e5;
   font-family: 'Open Sans';
   font-size: 14px;
   font-weight: 700;
@@ -191,9 +185,8 @@ table.playlist {
 
 .bottom-area {
   align-items: center;
-  background: linear-gradient(to bottom, #444444 0%, #333333 100%);
+  background-color: #383e4f;
   border-top: 1px solid #333;
-  box-shadow: 0 0 17px 3px black;
   display: flex;
   flex: 1;
   justify-content: space-between;
@@ -208,23 +201,21 @@ table.playlist {
   color: #D0D9E5;
   cursor: default; }
   .control:first-child {
-    padding-left: 22px; }
+    padding-left: 18px; }
   .control:last-child {
-    padding-right: 22px; }
+    padding-right: 18px; }
   .control.button {
     font-size: 12px;
     margin: 0 10px;
-    text-shadow: 1px 1px 1px black;
     transition: text-shadow 0.2s, box-shadow 0.2s; }
     .control.button:hover {
       text-shadow: 0 0 4px #d0d9e5; }
   .control.rect-button {
-    background: #555;
-    border-radius: 4px;
-    border: 1px solid #222;
-    color: white;
+    background: #667489;
+    border: 1px solid #667489;
+    color: #e3e4e5;
     padding: 6px;
-    margin-left: 8px; }
+    margin-right: 8px; }
     .control.rect-button:focus {
       outline: none; }
     .control.rect-button:active {
@@ -232,7 +223,8 @@ table.playlist {
   .control.label {
     font-size: 12px;
     margin-left: 8px;
-    margin-right: 8px; }
+    margin-right: 8px;
+    float: left; }
   .control input {
     border-radius: 12px;
     border: 1px solid #777;
@@ -254,21 +246,17 @@ table.playlist {
     .control.bar:hover {
       box-shadow: 0 0 4px #D0D9E5; }
     .control.bar .cover {
-      background-color: #448aa6;
+      background-color: #619baa;
       border-radius: 4px;
       height: 10px;
       position: absolute; }
     .control.bar .handle {
-      background: linear-gradient(to bottom, #7e868c 0%, #374044 100%);
+      background-color: #619baa;
       border-radius: 8px;
-      border: 1px solid #444;
-      box-shadow: 0 0 2px black;
-      height: 16px;
-      margin-left: -8px;
-      margin-top: -4px;
+      height: 10px;
+      margin-left: -5px;
       position: relative;
-      transition: box-shadow 0.1s;
-      width: 16px; }
+      width: 10px; }
       .control.bar .handle:hover {
         box-shadow: 0 0 4px #d0d9e5; }
   .control.volume {

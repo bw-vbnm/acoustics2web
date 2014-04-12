@@ -38,12 +38,14 @@
       <div class="top-area">
         <div class="control label" title="Search" data-icon="&#xf002;"></div>
         <form ng-submit="searchSongs(searchText)" class="control"><input type="search" placeholder="Search" ng-model="searchText" /></form>
-        <button class="control rect-button youtube" title="YouTube" ng-click="startYouTubeDialog()">
+         <div class="button-container">
+          <button class="control rect-button youtube" title="YouTube" ng-click="startYouTubeDialog()">
           <span data-icon="&#xf167;"></span>Play YouTube
-        </button>
-        <button class="control rect-button" title="Logout" ng-click="logout()" ng-show="loggedIn"><span data-icon="&#xf08b;"></span>Logout: {{ loggedIn['first-name'] }}</button>
-        <button class="control rect-button" title="Login" ng-click="ensureLogin()" ng-show="!loggedIn">
+          </button>
+          <button class="control rect-button" title="Logout" ng-click="logout()" ng-show="loggedIn"><span data-icon="&#xf08b;"></span>Logout: {{ loggedIn['first-name'] }}</button>
+          <button class="control rect-button" title="Login" ng-click="ensureLogin()" ng-show="!loggedIn">
           <span data-icon="&#xf090;"></span>Login
+        </div>
         </button>
       </div>
       <div class="middle-area">
@@ -62,23 +64,30 @@
           <table class="playlist">
             <colgroup>
               <col span="1" style="width: 5%;">
-              <col span="1" style="width: 5%;">
-              <col span="1" style="width: 30%;">
+              <col span="1" style="width: 7.5%;">
               <col span="1" style="width: 30%;">
               <col span="1" style="width: 20%;">
-              <col span="1" style="width: 10%;">
+              <col span="1" style="width: 30%;">
+              <col span="1" style="width: 7.5%;">
             </colgroup>
             <thead>
-              <tr><th>Vote</th><th>Track</th><th>Title</th><th>Album</th><th>Artist</th><th>Length</th></tr>
+              <tr>
+                <th>Vote</th>
+                <th>Length</th>
+                <th>Title</th>
+                <th>Artist</th>
+                <th>Album</th>
+                <th>Track</th>
+              </tr>
             </thead>
             <tbody>
               <tr ng-repeat="song in playlist track by $index">
                 <td style="text-align: center" ng-click="voteSong(song)"><span style="font-family: 'FontAwesome'">{{ ['\uf00c', '\uf067'][song.vote ? 0 : 1] }}</span></td>
-                <td>{{ song.tracknumber }}</td>
-                <td>{{ song.title }}</td>
-                <td><span ng-click="searchSongs('album:' + song.album)">{{ song.album }}</span></td>
-                <td>{{ song.artist }}</td>
                 <td>{{ song.length|momentFormat }}</td>
+                <td>{{ song.title }}</td>
+                <td>{{ song.artist }}</td>
+                <td><span ng-click="searchSongs('album:' + song.album)">{{ song.album }}</span></td>
+                <td>{{ song.tracknumber }}</td>
               </tr>
             </tbody>
           </table>
